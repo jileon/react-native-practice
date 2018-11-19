@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 import { black, red } from 'ansi-colors';
-
+import ListItem from './src/listItem';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -30,7 +30,7 @@ inputs: prevState.inputs.concat(prevState.text)
   }
   render() {
     const inputsOutput = this.state.inputs.map((item, index)=>(
-      <Text key={index}>{item}</Text>
+      <ListItem key={index} input={item}/>
     ) )
 
     return (
@@ -47,10 +47,10 @@ inputs: prevState.inputs.concat(prevState.text)
       onPress={this.handleButton}
       title='Add'/>
       </View>
+        <View style={styles.outputContainer}>
         {inputsOutput}
-      <View>
-
-      </View>
+        </View>
+  
       </View>
     );
   }
@@ -78,6 +78,9 @@ const styles = StyleSheet.create({
   },
   button:{
     width: "30%"
+  },
+  outputContainer:{
+    width: "100%"
   }
 
 });
