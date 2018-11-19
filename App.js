@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
-import { black, red } from 'ansi-colors';
+import AddItem from './src/addItem';
 import ListItem from './src/listItem';
 
 export default class App extends React.Component {
@@ -35,18 +35,11 @@ inputs: prevState.inputs.concat(prevState.text)
 
     return (
       <View style={styles.container}>
-      <View style={styles.textView}>
-      <TextInput 
-       style={styles.textInput}
-       placeholder= 'a useless place holder'
-       value={this.state.text} 
-       onChangeText={this.inputTextChange}/>
-      <Button 
-      color= "black"
-      style={styles.button}
-      onPress={this.handleButton}
-      title='Add'/>
-      </View>
+        <AddItem 
+        value={this.state.text} 
+        onChangeText={this.inputTextChange}
+        onPressButton={this.handleButton}
+        />
         <View style={styles.outputContainer}>
         {inputsOutput}
         </View>
@@ -64,21 +57,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-start',
   },
-  textView:{
-    // flex:1,
-    width: "100%",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center"
-  },
-  textInput:{
-    width:'70%', 
-    borderBottomColor: "blue",
-    borderBottomWidth:1, 
-  },
-  button:{
-    width: "30%"
-  },
+ 
   outputContainer:{
     width: "100%"
   }
