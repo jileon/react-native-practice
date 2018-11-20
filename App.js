@@ -30,7 +30,9 @@ inputs: prevState.inputs.concat(prevState.text)
   }
   render() {
     const inputsOutput = this.state.inputs.map((item, index)=>(
-      <ListItem key={index} input={item}/>
+      <ListItem key={index} input={item}
+      onItemPress={()=>alert("item pressed - ID: " + index)}
+      />
     ) )
 
     return (
@@ -40,9 +42,9 @@ inputs: prevState.inputs.concat(prevState.text)
         onChangeText={this.inputTextChange}
         onPressButton={this.handleButton}
         />
-        <View style={styles.outputContainer}>
+        { <View style={styles.outputContainer}>
         {inputsOutput}
-        </View>
+        </View> }
   
       </View>
     );

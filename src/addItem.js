@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, TextInput, View } from 'react-native';
-import MyButton from './button';
+import Mybutton from './button';
 
 const AddItem = (props)=>(
  
@@ -10,7 +10,9 @@ const AddItem = (props)=>(
        placeholder= 'a useless place holder'
        value={props.value} 
        onChangeText={props.onChangeText}/>
-      <MyButton onPressButton={props.onPressButton}/>
+
+
+      <Mybutton onPressButton={props.onPressButton}/>
       </View>
 
 );
