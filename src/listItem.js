@@ -8,7 +8,7 @@ const ListItem = (props)=>(
 style={styles.listItem}
 
 >
-  <Text>{props.input}</Text>
+<Text>{props.input}</Text>
 </View>
 </TouchableWithoutFeedback>
 );
